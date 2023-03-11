@@ -10,7 +10,9 @@ export default function App() {
   const [editValue, setEditValue] = useState('');
   const [activeTab, setActiveTab] = useState(TABS[0]);
 
+  //Fetch logic
   //------------------------------------------------------------
+
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then((response) => {
@@ -21,6 +23,7 @@ export default function App() {
       });
   }, []);
 
+  //Tabs Logic
   //------------------------------------------------------------
 
   const renderTabs = () => {
@@ -46,6 +49,7 @@ export default function App() {
     return `tab ${activeTabName}`;
   };
 
+  //Handle Todo List logic
   //------------------------------------------------------------
 
   const handleTodo = () => {
@@ -83,6 +87,7 @@ export default function App() {
     setTodos(newTodo);
   };
 
+  //Handle Editing logic
   //------------------------------------------------------------
 
   const handleCancel = () => {
@@ -114,6 +119,7 @@ export default function App() {
     setEditValue('');
   };
 
+  //Handling between Tabs,Editing, and Todo list logic
   //------------------------------------------------------------
 
   const handleTodoList = () => {
@@ -158,9 +164,12 @@ export default function App() {
         }
       });
   };
+
+  //UI
+  //------------------------------------------------------------
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
+      <h1>Hello! Welcome!</h1>
       <p>The complete Todo List :)</p>
       <input type="text" onChange={handleInput} value={input} />
       <button onClick={handleTodo}>ADD</button>
