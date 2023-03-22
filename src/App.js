@@ -68,9 +68,7 @@ export default function App() {
   };
 
   const handleDelete = (todoId) => {
-    const newTodo = todos.filter((todo) => {
-      return todo.id !== todoId;
-    });
+    const newTodo = todos.filter((todo) => todo.id !== todoId);
     setTodos(newTodo);
   };
 
