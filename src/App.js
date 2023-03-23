@@ -26,6 +26,8 @@ export default function App() {
   //Tabs Logic
   //------------------------------------------------------------
 
+  // const TABS = ['ALL', 'ACTIVE', 'COMPLETED'];
+
   const renderTabs = () => {
     return TABS.map((tab) => {
       return (
