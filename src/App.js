@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 
 const TABS = ['ALL', 'ACTIVE', 'COMPLETED'];
+const url = 'https://jsonplaceholder.typicode.com/todos';
 
 export default function App() {
   const [input, setInput] = useState('');
@@ -14,13 +15,9 @@ export default function App() {
   //------------------------------------------------------------
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setTodos(data.slice(0, 10));
-      });
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setTodos(data.slice(0, 10)));
   }, []);
 
   //Tabs Logic
