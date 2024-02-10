@@ -17,7 +17,7 @@ export default function App() {
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((data) => setTodos(data.slice(0, 10)));
+      .then((data) => setTodos(data.slice(0, 20)));
   }, []);
 
   //Tabs Logic
